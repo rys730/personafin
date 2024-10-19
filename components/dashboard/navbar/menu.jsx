@@ -6,27 +6,27 @@ const Menus = [
     },
     {
         "name": "Income",
-        "path": "/dashboard",
+        "path": "/dashboard/income",
         "image": "/menus/income.svg"
     },
     {
         "name": "Expense",
-        "path": "/dashboard",
+        "path": "/dashboard/expense",
         "image": "/menus/expense.svg"
     },
     {
         "name": "Transfer",
-        "path": "/dashboard",
+        "path": "/dashboard/transfer",
         "image": "/menus/transfer.svg"
     },
     {
         "name": "Subscriptions",
-        "path": "/dashboard",
+        "path": "/dashboard/subscriptions",
         "image": "/menus/subscriptions.svg"
     },
     {
         "name": "Goals",
-        "path": "/dashboard",
+        "path": "/dashboard/goals",
         "image": "/menus/goals.svg"
     },
 ]

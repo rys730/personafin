@@ -4,7 +4,13 @@ import Menus from './menu'
 
 export default function Navbar() {
     const [open, setOpen] = useState(false)
+    const [active, setActive] = useState("")
     const navRef = useRef(null);
+
+    const handleMenuClick = (param) => {
+        setOpen(!open)
+        setActive(param)
+    }
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (navRef.current && !navRef.current.contains(event.target) && open) {
@@ -28,10 +34,11 @@ export default function Navbar() {
                 {
                     Menus.map(menu=>{
                         return (
-                            <li className='flex items-center p-5'>
+                            <li className={`flex items-center p-5 ${active === menu.name ? "bg-indigo-500" : "bg-indigo-200"}`}>
                                 <img src={menu.image} alt="" className='w-5 h-5 mr-5'/>
                                 <Link 
                                 href={menu.path}
+                                onClick={()=>handleMenuClick(menu.name)}
                                 className='relative text-s ml-1'>
                                     <span>
                                         {menu.name}
