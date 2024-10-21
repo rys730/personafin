@@ -1,7 +1,6 @@
-import Image from "next/image";
+import { permanentRedirect, redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <h1>Hello NextJS</h1>
-  );
+  permanentRedirect('/auth/login')
+  return null;
 }

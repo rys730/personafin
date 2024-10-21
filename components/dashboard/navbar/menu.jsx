@@ -5,6 +5,11 @@ const Menus = [
         "image": "/menus/home.svg"
     },
     {
+        "name": "Accounts",
+        "path": "/dashboard/accounts",
+        "image": "/menus/accounts.svg"
+    },
+    {
         "name": "Income",
         "path": "/dashboard/income",
         "image": "/menus/income.svg"

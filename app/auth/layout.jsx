@@ -871,7 +871,7 @@ const SVGComponent = (props) => (
 
 export default function AuthLayout({children}) {
   return (
-    <div className='bg-blue-300 flex justify-center items-center h-screen gap-2'>
+    <div className='bg-black flex justify-center items-center h-screen gap-2'>
         <div className='justify-center h-screen hidden md:flex md:w-3/4'>
             <SVGComponent width = "100%" height = "100%"/>
         </div>
