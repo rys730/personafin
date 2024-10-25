@@ -2,7 +2,9 @@ import ContentsWrapper from '@/components/dashboard/contents/Contents'
 import AccountCard from '@/components/dashboard/contents/home/AccountCard'
 import AccountCardsWrapper from '@/components/dashboard/contents/home/AccountCardsWrapper'
 import Expenses from '@/components/dashboard/contents/home/Expenses'
-import { columns, expenseMockData } from '@/components/dashboard/contents/home/ExpensesColumns'
+import { expensesColumns, expenseMockData } from '@/components/dashboard/contents/home/ExpensesColumns'
+import Income from '@/components/dashboard/contents/home/Income'
+import { incomeColumns, incomeMockData } from '@/components/dashboard/contents/home/IncomeColumns'
 import React from 'react'
 
 export default function Home() {
@@ -36,7 +38,8 @@ export default function Home() {
           return <AccountCard key={data.id} data={data} />
         })}
       </AccountCardsWrapper>
-      <Expenses columns={columns} data={expenseMockData}/>
+      <Expenses columns={expensesColumns} data={expenseMockData}/>
+      <Income columns={incomeColumns} data={incomeMockData}/>
     </ContentsWrapper>
   )
 }

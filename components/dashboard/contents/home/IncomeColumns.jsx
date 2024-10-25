@@ -1,28 +1,25 @@
-export const expenseMockData = [
+export const incomeMockData = [
     {
         "date": "2024-01-01",
-        "name": "coffee",
-        "type": "Food",
+        "name": "utang",
         "cost": "80.000",
         "wallet": "wallet1"
     },
     {
         "date": "2024-01-01",
-        "name": "coffee",
-        "type": "Food",
+        "name": "utang",
         "cost": "80.000",
         "wallet": "wallet1"
     },
     {
         "date": "2024-01-01",
-        "name": "coffee",
-        "type": "Food",
+        "name": "utang",
         "cost": "80.000",
         "wallet": "wallet1"
     },
 ]
 
-export const expensesColumns = [
+export const incomeColumns = [
     {
         accessorKey: "date",
         header: "DATE"
@@ -30,10 +27,6 @@ export const expensesColumns = [
     {
         accessorKey: "name",
         header: "NAME"
-    },
-    {
-        accessorKey: "type",
-        header: "TYPE"
     },
     {
         accessorKey: "cost",
