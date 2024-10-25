@@ -22,7 +22,7 @@ export default function Register() {
               <input type="password" name='password' placeholder='password' className='block mt-2 border-1 rounded-xl bg-transparent py-1.5 pl-2 w-full text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6'/>
             </div>
             <div className='flex justify-center mt-10'>
-              <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign Up</button>
+              <button type="submit" className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign Up</button>
             </div>
           </form>
           <div className='border-indigo-200 border-b-2 mt-5'></div>

@@ -1,7 +1,8 @@
 import ContentsWrapper from '@/components/dashboard/contents/Contents'
 import AccountCard from '@/components/dashboard/contents/home/AccountCard'
 import AccountCardsWrapper from '@/components/dashboard/contents/home/AccountCardsWrapper'
-import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import Expenses from '@/components/dashboard/contents/home/Expenses'
+import { columns, expenseMockData } from '@/components/dashboard/contents/home/ExpensesColumns'
 import React from 'react'
 
 export default function Home() {
@@ -32,9 +33,10 @@ export default function Home() {
       <h2 className='text-2xl mt-10 font-bold'>Welcome, User!</h2>
       <AccountCardsWrapper>
         {cardDatas.map(data=>{
-          return <AccountCard data={data} />
+          return <AccountCard key={data.id} data={data} />
         })}
       </AccountCardsWrapper>
+      <Expenses columns={columns} data={expenseMockData}/>
     </ContentsWrapper>
   )
 }
