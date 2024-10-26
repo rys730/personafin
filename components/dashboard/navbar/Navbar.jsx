@@ -1,15 +1,39 @@
 import Link from 'next/link'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
 import Menus from './menu'
+import { usePathname } from 'next/navigation';
+
+const NavMenus = ({menu, activemenu, onClick})=>{
+    return (
+        <li key={menu.name} className={`flex items-center p-5 ${activemenu === menu.name.toLowerCase() ? "bg-indigo-500" : "bg-gray-800"}`}>
+            <img src={menu.image} alt="" className='w-5 h-5 mr-5'/>
+            <Link 
+            href={menu.path}
+            onClick={onClick}
+            className='relative text-s ml-1'>
+                <span>
+                    {menu.name}
+                </span>
+            </Link>
+        </li>
+    )
+}
 
 export default function Navbar() {
+    const pathname = usePathname()
     const [open, setOpen] = useState(false)
-    const [active, setActive] = useState("Home")
     const navRef = useRef(null);
+    const activemenu = useMemo(()=>{
+        const pathSegments = pathname.split("/");
+        let menu = pathSegments[pathSegments.length - 1] || "Home";
+        if (menu === "dashboard") {
+            menu = "Home";
+        }
+        return menu.toLowerCase();
+    }, [pathname])
 
-    const handleMenuClick = (param) => {
+    const handleMenuClick = () => {
         setOpen(!open)
-        setActive(param)
     }
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -34,17 +58,7 @@ export default function Navbar() {
                 {
                     Menus.map(menu=>{
                         return (
-                            <li key={menu.name} className={`flex items-center p-5 ${active === menu.name ? "bg-indigo-500" : "bg-gray-800"}`}>
-                                <img src={menu.image} alt="" className='w-5 h-5 mr-5'/>
-                                <Link 
-                                href={menu.path}
-                                onClick={()=>handleMenuClick(menu.name)}
-                                className='relative text-s ml-1'>
-                                    <span>
-                                        {menu.name}
-                                    </span>
-                                </Link>
-                            </li>
+                            <NavMenus key={menu.name} menu={menu} activemenu={activemenu} onClick={handleMenuClick}/>
                         )
                     })
                 }
