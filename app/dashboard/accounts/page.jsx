@@ -1,7 +1,11 @@
+import AccountGraph from '@/components/dashboard/contents/accounts/AccountGraph'
+import ContentsWrapper from '@/components/dashboard/contents/Contents'
 import React from 'react'
 
 export default function Accounts() {
   return (
-    <div className='ml-20 mt-20'>Accounts</div>
+    <ContentsWrapper>
+      <AccountGraph />
+    </ContentsWrapper>
   )
 }
