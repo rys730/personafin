@@ -5,9 +5,9 @@ import React from 'react'
 
 export default function Accounts() {
   return (
-    <ContentsWrapper>
-      <AccountGraph />
-      <AccountTable />
-    </ContentsWrapper>
+    <>
+    <AccountGraph />
+    <AccountTable />
+    </>
   )
 }

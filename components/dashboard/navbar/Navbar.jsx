@@ -25,9 +25,12 @@ export default function Navbar() {
     const navRef = useRef(null);
     const activemenu = useMemo(()=>{
         const pathSegments = pathname.split("/");
-        let menu = pathSegments[pathSegments.length - 1] || "Home";
-        if (menu === "dashboard") {
+        const pathSegmentsLen = pathSegments.length
+        let menu = "Home";
+        if (pathSegmentsLen == 2 && pathSegments[pathSegmentsLen-1] === "dashboard") {
             menu = "Home";
+        } else if (pathSegmentsLen > 2) {
+            menu = pathSegments[2]
         }
         return menu.toLowerCase();
     }, [pathname])
@@ -58,7 +61,7 @@ export default function Navbar() {
                 {
                     Menus.map(menu=>{
                         return (
-                            <NavMenus key={menu.name} menu={menu} activemenu={activemenu} onClick={handleMenuClick}/>
+                            <NavMenus  key={menu.name} menu={menu} activemenu={activemenu} onClick={handleMenuClick}/>
                         )
                     })
                 }

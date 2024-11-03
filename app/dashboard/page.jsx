@@ -31,7 +31,7 @@ export default function Home() {
     },
   ]
   return (
-    <ContentsWrapper>
+    <>
       <h2 className='text-2xl mt-10 font-bold'>Welcome, User!</h2>
       <AccountCardsWrapper>
         {cardDatas.map(data=>{
@@ -40,6 +40,6 @@ export default function Home() {
       </AccountCardsWrapper>
       <Expenses columns={expensesColumns} data={expenseMockData}/>
       <Income columns={incomeColumns} data={incomeMockData}/>
-    </ContentsWrapper>
+    </>  
   )
 }
