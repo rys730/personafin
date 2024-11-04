@@ -2,18 +2,25 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+const TableWrapper = React.forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("relative overflow-auto max-h-[10rem]", className)}
+    {...props} />
+))
+
 const Table = React.forwardRef(({ className, ...props }, ref) => (
-  <div className="relative w-full overflow-auto">
+  // <div className="relative w-full overflow-auto max-h-[20rem]">
     <table
       ref={ref}
       className={cn("w-full caption-bottom text-sm", className)}
       {...props} />
-  </div>
+  // </div>
 ))
 Table.displayName = "Table"
 
 const TableHeader = React.forwardRef(({ className, ...props }, ref) => (
-  <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...props} />
+  <thead ref={ref} className={cn("[&_tr]:border-b sticky top-0", className)} {...props} />
 ))
 TableHeader.displayName = "TableHeader"
 
@@ -80,4 +87,5 @@ export {
   TableRow,
   TableCell,
   TableCaption,
+  TableWrapper
 }
