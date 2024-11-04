@@ -1,4 +1,4 @@
-import AccountDetailsComponent from '@/components/dashboard/contents/accounts/AccountDetails'
+import AccountDetailsComponent from '@/components/dashboard/contents/accounts/details/AccountDetails'
 import React from 'react'
 
 export default async function AccountDetails({params}) {

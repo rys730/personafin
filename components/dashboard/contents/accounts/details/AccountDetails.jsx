@@ -1,8 +1,12 @@
 "use client"
 import { Card } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import IncomeRecord from './IncomeRecord'
+import ExpenseRecord from './ExpenseRecord'
+import TransferRecord from './TransferRecord'
 
 export default function AccountDetailsComponent({id}) {
     const router = useRouter()
@@ -50,6 +54,58 @@ export default function AccountDetailsComponent({id}) {
             </Card>
         </div>
         <Separator className='mt-2'/>
+        <div className="mt-4">
+            <h2 className='text-xl font-bold'>Income Record</h2>
+            <Table className='mt-2'>
+                <TableHeader className="bg-white">
+                  <TableRow>
+                    <TableHead className="w-[100px]">Date</TableHead>
+                    <TableHead>Income Stream</TableHead>
+                    <TableHead>Amount</TableHead>
+                    <TableHead>Notes</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                    <IncomeRecord />
+                </TableBody>
+            </Table>
+        </div>
+        <Separator className='mt-10'/>
+        <div className="mt-4">
+            <h2 className='text-xl font-bold'>Expense Record</h2>
+            <Table className='mt-2'>
+                <TableHeader className="bg-white">
+                  <TableRow>
+                    <TableHead className="w-[100px]">Date</TableHead>
+                    <TableHead>Expense</TableHead>
+                    <TableHead>Amount</TableHead>
+                    <TableHead>Category</TableHead>
+                    <TableHead>Notes</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                    <ExpenseRecord />
+                </TableBody>
+            </Table>
+        </div>
+        <Separator className='mt-10'/>
+        <div className="mt-4">
+            <h2 className='text-xl font-bold'>Transfer Record</h2>
+            <Table className='mt-2'>
+                <TableHeader className="bg-white">
+                  <TableRow>
+                    <TableHead className="w-[100px]">Date</TableHead>
+                    <TableHead>Name</TableHead>
+                    <TableHead>Amount</TableHead>
+                    <TableHead>From</TableHead>
+                    <TableHead>To</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                    <TransferRecord />
+                </TableBody>
+            </Table>
+        </div>
     </>
   )
 }
